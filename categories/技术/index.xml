@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>技术 on 甠</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/</link>
+        <description>Recent content in 技术 on 甠</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>甠</copyright>
+        <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用Hugo搭博客</title>
+        <link>http://localhost:1313/p/blog-building/</link>
+        <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/blog-building/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;虽然标题名为使用Hugo搭博客，但我在这篇文章中不想谈Hugo的&amp;quot;快速开始&amp;quot;。网上的教程很多，还有&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=c8cb10360ffece88b69adc5134cc4bc8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;手把手视频教程&lt;/a&gt;可以参考，因此我的重心还是放在Stack主题的使用方式上。&lt;/p&gt;
+&lt;p&gt;在此之前有两件事值得注意。&lt;/p&gt;
+&lt;h3 id=&#34;如何确保hugo的命令能被执行&#34;&gt;如何确保Hugo的命令能被执行？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置系统环境变量；&lt;/p&gt;
+&lt;p&gt;Hugo安装好后，应该有一个名为hugo.exe的可执行程序，其最大的作用就是解析命令。这一类程序要想在任何文件目录下得以执行，在windows中基本都是靠环境变量来实现，例如Git。因此如果我们想要在任何站点下，都能直接执行hugo的命令，就需要为该程序配置系统环境变量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制可执行程序；&lt;/p&gt;
+&lt;p&gt;直接将hugo.exe复制到其站点根目录下，也能保证该站点的hugo命令可以执行。但是如果这样做，那么每个新的站点都需要复制一份，没有方法1来得方便。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;如何使用stack主题的demo文章&#34;&gt;如何使用Stack主题的Demo文章？
+&lt;/h3&gt;&lt;p&gt;Hugo加载内容时，站点的优先级高于主题，即：Hugo会先加载站点根目录下Content文件夹的文章，其次，再去加载主题根目录下Content文件夹的文章。由于Stack主题的根目录下没有Content文件夹，其保留在主题根目录下一个名为exampleSite的文件夹下，因此有以下有两种方法使用其Demo文章(推荐方法1，之后写文章都可以直接在站点下的Content写)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用exampleSite下的Content替换掉站点根目录下的Content；&lt;/li&gt;
+&lt;li&gt;将exampleSite下的Content剪切到主题根目录下；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置文件&#34;&gt;配置文件
+&lt;/h2&gt;&lt;h2 id=&#34;开始&#34;&gt;开始
+&lt;/h2&gt;&lt;p&gt;今天正好是我摩托车驾证理论考试的日子。刚到车管所的时候，就看见了原来学小车时的驾校，也算是回忆起了那个时候的自己，18岁，充满青春活力。&lt;/p&gt;
+&lt;p&gt;等到9点，门口候考的人有序走进了考场。没想到现在考个驾证这么严格，大家被要求穿着统一的考试服(类似于家里厨房的围裙)，防止作弊。考场内开着暖气，我还是习惯不了，咳嗽又犯了，回程中在公交车上咳嗽个不停。这还是我第一次乘坐528，从车管所直达步步高的二角烧烤对面，这2块钱真是赚了。&lt;/p&gt;
+&lt;p&gt;哦，对了，早上去车管所的时候，托儿车司机带着我免费去高速上兜了一圈，从二桥上道，南津街下道，下去就是铜合路，真是开了眼界。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

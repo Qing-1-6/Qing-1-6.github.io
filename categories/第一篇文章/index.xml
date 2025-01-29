@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>第一篇文章 on 甠</title>
+        <link>http://localhost:1313/categories/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
+        <description>Recent content in 第一篇文章 on 甠</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>甠</copyright><atom:link href="http://localhost:1313/categories/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="基于本人博客主题的一些修改经验">
+<title>Stack主题的使用方法</title>
+
+<link rel='canonical' href='http://localhost:1313/p/stack/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Stack主题的使用方法">
+<meta property='og:description' content="基于本人博客主题的一些修改经验">
+<meta property='og:url' content='http://localhost:1313/p/stack/'>
+<meta property='og:site_name' content='甠'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-01-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-25T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Stack主题的使用方法">
+<meta name="twitter:description" content="基于本人博客主题的一些修改经验">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/p1_hu11568309322858951704.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">♒</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">甠</a></h1>
+            <h2 class="site-description">Welcome!</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Qing-1-6/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E7%AE%80%E4%BB%8B/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>简介</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#如何确保hugo的命令能被执行">如何确保hugo的命令能被执行？</a></li>
+    <li><a href="#使用demo">使用Demo</a></li>
+    <li><a href="#配置文件">配置文件</a></li>
+    <li><a href="#布局">布局</a>
+      <ol>
+        <li><a href="#修改导航栏">修改导航栏</a></li>
+        <li><a href="#修改分类页面上方的图片">修改分类页面上方的图片</a></li>
+        <li><a href="#修改文章中点击图片后的提示文字">修改文章中点击图片后的提示文字</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/hugo/" style="background-color: #FF38B3; color: #fff;">
+                Hugo
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/stack/">Stack主题的使用方法</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            基于本人博客主题的一些修改经验
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-01-25</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>我的博客搭建主要是参考了这个<a class="link" href="https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;vd_source=c8cb10360ffece88b69adc5134cc4bc8"  target="_blank" rel="noopener"
+    >手把手视频教程</a>，但其只是开了个头，关于如何更细致地修改Stack主题还有很多东西可以探讨。下面以Stack的Demo和我的博客为例进行介绍。</p>
+<h2 id="如何确保hugo的命令能被执行">如何确保hugo的命令能被执行？
+</h2><ol>
+<li>
+<p>配置系统环境变量；</p>
+<p>Hugo安装好后，应该有一个名为hugo.exe的可执行程序，其最大的作用就是解析命令。这一类程序要想在任何文件目录下得以执行，在windows中基本都是靠环境变量来实现，例如Git。因此如果我们想要在任何站点下，都能直接执行hugo的命令，就需要为该程序配置系统环境变量。</p>
+<p><img src="/p/stack/imgs/p1.png"
+	width="606"
+	height="189"
+	srcset="/p/stack/imgs/p1_hu18324862204588668980.png 480w, /p/stack/imgs/p1_hu16521876149326705980.png 1024w"
+	loading="lazy"
+	
+		alt="hugo.exe"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="320"
+		data-flex-basis="769px"
+	
+></p>
+<p><img src="/p/stack/imgs/p2.png"
+	width="200"
+	height="48"
+	srcset="/p/stack/imgs/p2_hu15964733128545321297.png 480w, /p/stack/imgs/p2_hu10084597956742767849.png 1024w"
+	loading="lazy"
+	
+		alt="配置系统环境变量"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="416"
+		data-flex-basis="1000px"
+	
+></p>
+</li>
+<li>
+<p>复制可执行程序；</p>
+<p>直接将hugo.exe复制到其站点根目录下，也能保证该站点的hugo命令可以执行。例如我的站点名称是FirstSite，那么按照上图，我复制的路径就是G:/Hugo/FirstSite/hugo.exe。但是如果这样做，那么每个新的站点都需要复制一份，没有方法1来得方便。</p>
+</li>
+</ol>
+<h2 id="使用demo">使用Demo
+</h2><p>此处的Demo指的是Stack主题的作者所提供的一些示例文章与页面，例如名为Markdown Syntax Guide的文章，Home、About页面等，这些东西在hugo中保存在一个名为content的文件夹内。</p>
+<p>hugo加载网站内容时，站点的优先级高于主题，即：hugo会先加载站点根目录下content文件夹的文章，其次去加载主题根目录下的content。由于Stack主题的content文件夹保存在一个名为exampleSite的文件夹下，因此有以下两种方法使用其Demo(推荐方法1，之后添加新页面、文章都可以直接在站点下的content写)。</p>
+<ol>
+<li>用exampleSite下的content替换掉站点根目录下的content；</li>
+<li>将exampleSite下的content剪切到主题根目录下；</li>
+</ol>
+<p><img src="/p/stack/imgs/p3.png"
+	width="611"
+	height="172"
+	srcset="/p/stack/imgs/p3_hu3326970504034851102.png 480w, /p/stack/imgs/p3_hu14578974193105180860.png 1024w"
+	loading="lazy"
+	
+		alt="Stack主题的content位置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="355"
+		data-flex-basis="852px"
+	
+></p>
+<p><img src="/p/stack/imgs/p4.png"
+	width="1129"
+	height="970"
+	srcset="/p/stack/imgs/p4_hu14141699426013520984.png 480w, /p/stack/imgs/p4_hu3475435274984698566.png 1024w"
+	loading="lazy"
+	
+		alt="Demo"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="116"
+		data-flex-basis="279px"
+	
+></p>
+<h2 id="配置文件">配置文件
+</h2><p>与content同理，在exampleSite下可以找到一个名为hugo.yaml的配置文件，直接用其作为站点的配置文件即可。该配置文件的参数含义在Stack主题的官方网站以及上述视频教程中都介绍得比较详细，在此不再赘述。</p>
+<h2 id="布局">布局
+</h2><p>通过浏览器的开发者模式可以发现，整个博客页面由三大部分组成，分别是left-sidebar、main、right-sidebar，位于页面的左侧、中间、右侧。</p>
+<p><img src="/p/stack/imgs/p5.png"
+	width="1920"
+	height="1080"
+	srcset="/p/stack/imgs/p5_hu17427291760924973456.png 480w, /p/stack/imgs/p5_hu3914614053922765022.png 1024w"
+	loading="lazy"
+	
+		alt="left-sidebar"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><img src="/p/stack/imgs/p6.png"
+	width="1920"
+	height="1080"
+	srcset="/p/stack/imgs/p6_hu9574776291437125619.png 480w, /p/stack/imgs/p6_hu15240147861849166144.png 1024w"
+	loading="lazy"
+	
+		alt="main"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><img src="/p/stack/imgs/p7.png"
+	width="1920"
+	height="1080"
+	srcset="/p/stack/imgs/p7_hu6160409573029833366.png 480w, /p/stack/imgs/p7_hu5881341795701984191.png 1024w"
+	loading="lazy"
+	
+		alt="right-sidebar"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<h3 id="修改导航栏">修改导航栏
+</h3><p>left-sidebar包含头像、个签、导航栏等多个分区，其中导航栏可切换到不同的页面，例如Home、About等。要删除其中任何一个，只需要在content/page目录下找到对应的页面md文件，删除掉其<a class="link" href="https://gohugo.io/content-management/front-matter/"  target="_blank" rel="noopener"
+    >FrontMatter</a>中的menu字段。注意，这里的content路径取决于你使用Stack主题Demo的方式(后面都是同理)。即：如果你是采取的方法1，那么你只需要修改站点下的content即可，如果你采取的方法2，那么就修改主题下的content。同理，想要修改导航栏的图标、文字、页面内容也都是直接在上述路径下对应页面md文件中修改。下图采取方法1使用Stack主题的Demo，将导航栏中的About页面的title修改为简介，其它页面同理。由于我的博客默认语言使用中文，为了以后支持英文更方便，我是直接在index.zh-cn.md文件中修改，而不是在index.md文件中，后者是默认文件。</p>
+<p><img src="/p/stack/imgs/p8.png"
+	width="418"
+	height="285"
+	srcset="/p/stack/imgs/p8_hu12923383150541764540.png 480w, /p/stack/imgs/p8_hu5364303527854541777.png 1024w"
+	loading="lazy"
+	
+		alt="修改导航栏的页面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="352px"
+	
+> <img src="/p/stack/imgs/p9.png"
+	width="155"
+	height="189"
+	srcset="/p/stack/imgs/p9_hu1698885999043227601.png 480w, /p/stack/imgs/p9_hu15955235068932835895.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="82"
+		data-flex-basis="196px"
+	
+> <img src="/p/stack/imgs/p10.png"
+	width="147"
+	height="191"
+	srcset="/p/stack/imgs/p10_hu3693556218893528340.png 480w, /p/stack/imgs/p10_hu17037473372882549729.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="76"
+		data-flex-basis="184px"
+	
+></p>
+<h3 id="修改分类页面上方的图片">修改分类页面上方的图片
+</h3><p>注：此处的分类页面在原Demo的导航栏中名为Archives。</p>
+<ol>
+<li>
+<p>修改提示文字；</p>
+<p>在content/categories路径下，新建一个_index.md文件，在FrontMatter中添加一个title字段，该值就是所有分类图片上方的提示文字。</p>
+<p><img src="/p/stack/imgs/p11.png"
+	width="382"
+	height="259"
+	srcset="/p/stack/imgs/p11_hu6187442634381690926.png 480w, /p/stack/imgs/p11_hu3187332414884759168.png 1024w"
+	loading="lazy"
+	
+		alt="修改图片的提示文字"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="353px"
+	
+></p>
+<p><img src="/p/stack/imgs/p12.png"
+	width="1329"
+	height="510"
+	srcset="/p/stack/imgs/p12_hu3877102170146762922.png 480w, /p/stack/imgs/p12_hu1973684454060167757.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="260"
+		data-flex-basis="625px"
+	
+> <img src="/p/stack/imgs/p13.png"
+	width="1245"
+	height="468"
+	srcset="/p/stack/imgs/p13_hu6452626915817432362.png 480w, /p/stack/imgs/p13_hu3155820999636994789.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="266"
+		data-flex-basis="638px"
+	
+></p>
+</li>
+<li>
+<p>新建分类；</p>
+<p>同样的路径下，根据自己的文章分类关键字，创建同名文件夹。例如我的文章里有一个名为生活的分类，那么我就在content/categories路径下创建了一个名为生活的文件夹，在其下包含_index.md文件与想展示的背景图。</p>
+<p><img src="/p/stack/imgs/p14.png"
+	width="429"
+	height="367"
+	srcset="/p/stack/imgs/p14_hu2613763692803713717.png 480w, /p/stack/imgs/p14_hu2256063625608040101.png 1024w"
+	loading="lazy"
+	
+		alt="新建分类"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="116"
+		data-flex-basis="280px"
+	
+></p>
+<p><img src="/p/stack/imgs/p15.png"
+	width="439"
+	height="218"
+	srcset="/p/stack/imgs/p15_hu2660149284575688412.png 480w, /p/stack/imgs/p15_hu4735585402563998440.png 1024w"
+	loading="lazy"
+	
+		alt="背景图效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="201"
+		data-flex-basis="483px"
+	
+>  <img src="/p/stack/imgs/p16.png"
+	width="1107"
+	height="458"
+	srcset="/p/stack/imgs/p16_hu8351739636825677646.png 480w, /p/stack/imgs/p16_hu13247818036906369712.png 1024w"
+	loading="lazy"
+	
+		alt="点击背景图后的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="241"
+		data-flex-basis="580px"
+	
+></p>
+</li>
+</ol>
+<h3 id="修改文章中点击图片后的提示文字">修改文章中点击图片后的提示文字
+</h3><p>Stack主题使用了一个名为photoswipe的js库，以此来更方便地查看图片。当我们点击文章中的图片后，会进入图片详情界面，原本被压缩显示的图片此时会以原像素显示，更加清晰，并且图片的四周会弹出一些按钮与提示文字，例如左右两侧的Previous (arrow left)与Next (arrow right)就是用于切换上一张与下一张图片的。</p>
+<p>要想修改这些提示文字，需要在主题根目录下找到对应的html文件。以本人名为FirstSite的站点为例，该文件的路径是G:\Hugo\FirstSite\themes\hugo-theme-stack\layouts\partials\article\components\photoswipe.html。只要使用Stack主题，layouts\partials\article\components\photoswipe.html的部分就是固定的。</p>
+<ol>
+<li>
+<p>右上角：关闭、分享、全屏、缩放</p>
+<p>在photoswipe.html中找到4个button，如下图所示，修改它们的title属性就可以修改它们在页面中的提示文字。</p>
+<p><img src="/p/stack/imgs/p17.png"
+	width="765"
+	height="165"
+	srcset="/p/stack/imgs/p17_hu16920273630805353886.png 480w, /p/stack/imgs/p17_hu16762819360373499001.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="463"
+		data-flex-basis="1112px"
+	
+> <img src="/p/stack/imgs/p18.png"
+	width="713"
+	height="168"
+	srcset="/p/stack/imgs/p18_hu2039531733145981445.png 480w, /p/stack/imgs/p18_hu9175938973402554740.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="424"
+		data-flex-basis="1018px"
+	
+></p>
+<p><img src="/p/stack/imgs/p19.png"
+	width="1910"
+	height="1074"
+	srcset="/p/stack/imgs/p19_hu1132991710749156369.png 480w, /p/stack/imgs/p19_hu238456950504283605.png 1024w"
+	loading="lazy"
+	
+		alt="修改前的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><img src="/p/stack/imgs/p20.png"
+	width="1920"
+	height="1072"
+	srcset="/p/stack/imgs/p20_hu13712503214669649707.png 480w, /p/stack/imgs/p20_hu5803725369942977942.png 1024w"
+	loading="lazy"
+	
+		alt="修改后的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="179"
+		data-flex-basis="429px"
+	
+></p>
+</li>
+<li>
+<p>右上角：点击share(分享)按钮后的提示框</p>
+<p>Stack的原Demo中，点击share按钮后会弹出photoswipe的默认提示框。若要修改它们，需找到对应的ts文件。在本博客的例子中，这个路径是G:\Hugo\FirstSite\themes\hugo-theme-stack\assets\ts\gallery.ts。该文件中有一个类名为StackGallery的类，其中有一个名为open的方法，修改它即可，原理如图中所示。</p>
+<p><img src="/p/stack/imgs/p21.png"
+	width="810"
+	height="364"
+	srcset="/p/stack/imgs/p21_hu3502324107039485387.png 480w, /p/stack/imgs/p21_hu18020746701482150440.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="222"
+		data-flex-basis="534px"
+	
+> <img src="/p/stack/imgs/p22.png"
+	width="847"
+	height="458"
+	srcset="/p/stack/imgs/p22_hu13095156497317205365.png 480w, /p/stack/imgs/p22_hu17559808845981105963.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="443px"
+	
+></p>
+<p><img src="/p/stack/imgs/p23.png"
+	width="1913"
+	height="1075"
+	srcset="/p/stack/imgs/p23_hu5723376536869093708.png 480w, /p/stack/imgs/p23_hu1017788015181307780.png 1024w"
+	loading="lazy"
+	
+		alt="修改前的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="427px"
+	
+></p>
+<p><img src="/p/stack/imgs/p24.png"
+	width="1913"
+	height="1071"
+	srcset="/p/stack/imgs/p24_hu12944838831679145405.png 480w, /p/stack/imgs/p24_hu4327103661871014179.png 1024w"
+	loading="lazy"
+	
+		alt="修改后的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="178"
+		data-flex-basis="428px"
+	
+></p>
+</li>
+<li>
+<p>左右两侧：上一张、下一张</p>
+<p>同理，也是在photoswipe.html中找到2个button，修改其title属性。</p>
+<p><img src="/p/stack/imgs/p25.png"
+	width="799"
+	height="122"
+	srcset="/p/stack/imgs/p25_hu8128225751379399161.png 480w, /p/stack/imgs/p25_hu8227436907605924575.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="654"
+		data-flex-basis="1571px"
+	
+> <img src="/p/stack/imgs/p26.png"
+	width="667"
+	height="121"
+	srcset="/p/stack/imgs/p26_hu3081295869304471870.png 480w, /p/stack/imgs/p26_hu184156049562984442.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="551"
+		data-flex-basis="1322px"
+	
+></p>
+<p><img src="/p/stack/imgs/p27.png"
+	width="1919"
+	height="1076"
+	srcset="/p/stack/imgs/p27_hu10933813794403398608.png 480w, /p/stack/imgs/p27_hu18217608325518531595.png 1024w"
+	loading="lazy"
+	
+		alt="修改前的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="178"
+		data-flex-basis="428px"
+	
+></p>
+<p><img src="/p/stack/imgs/p28.png"
+	width="1913"
+	height="1073"
+	srcset="/p/stack/imgs/p28_hu10857843772899541242.png 480w, /p/stack/imgs/p28_hu9314043849186188733.png 1024w"
+	loading="lazy"
+	
+		alt="修改后的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="178"
+		data-flex-basis="427px"
+	
+></p>
+</li>
+<li>
+<p>底部：图片名称的位置</p>
+<p>在photoswipe.html中，图片名称的位置是由一个类名为pswp__caption__center的div块决定的。由于Stack的原Demo中使用了photoswipe的默认样式，使得该div块的text-align属性值为left，因此图片名称并未居中显示。要想使其居中，只需要利用css的内联样式即可，即将刚才提到的text-align值修改为center。原理如下：photoswipe是通过cdn分发的，导致其css文件是一个外部样式引用，而css中内联样式的优先级高于外部样式，因此上述所设置的text-align:center可以覆盖掉默认的text-align:left。这一点在修改后的效果图中可以验证，pswp__caption__center块的text-align:left这一行被一条横线抹掉了，取而代之的是element.style的text-align:center。</p>
+<p><img src="/p/stack/imgs/p29.png"
+	width="428"
+	height="79"
+	srcset="/p/stack/imgs/p29_hu8116784526017061192.png 480w, /p/stack/imgs/p29_hu3689961583020975891.png 1024w"
+	loading="lazy"
+	
+		alt="修改前"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="541"
+		data-flex-basis="1300px"
+	
+> <img src="/p/stack/imgs/p30.png"
+	width="687"
+	height="76"
+	srcset="/p/stack/imgs/p30_hu16534612134321535700.png 480w, /p/stack/imgs/p30_hu7368278163730819711.png 1024w"
+	loading="lazy"
+	
+		alt="修改后"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="903"
+		data-flex-basis="2169px"
+	
+></p>
+<p><img src="/p/stack/imgs/p31.png"
+	width="1914"
+	height="956"
+	srcset="/p/stack/imgs/p31_hu3891488023665777126.png 480w, /p/stack/imgs/p31_hu11756524384934244316.png 1024w"
+	loading="lazy"
+	
+		alt="修改前的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="200"
+		data-flex-basis="480px"
+	
+></p>
+<p><img src="/p/stack/imgs/p32.png"
+	width="1912"
+	height="954"
+	srcset="/p/stack/imgs/p32_hu8245810520922936360.png 480w, /p/stack/imgs/p32_hu4159853261748857691.png 1024w"
+	loading="lazy"
+	
+		alt="修改后的效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="200"
+		data-flex-basis="481px"
+	
+></p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 甠
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="关闭(Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="分享"></button>
+
+                <button class="pswp__button pswp__button--fs" title="全屏"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="缩放"></button>
+                
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="上一张">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="下一张">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center" style="text-align: center;"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.436dc02e966b3292fd2ac1f550c7ba51510c463bf0a34d647577a62d4588618b.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

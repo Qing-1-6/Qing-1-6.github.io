@@ -7,14 +7,715 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>甠</copyright>
-        <lastBuildDate>Mon, 06 Jan 2025 11:12:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>FirstContent</title>
-        <link>http://localhost:1313/p/firstcontent/</link>
-        <pubDate>Mon, 06 Jan 2025 11:12:37 +0800</pubDate>
+        <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Stack主题的使用方法</title>
+        <link>http://localhost:1313/p/stack/</link>
+        <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/firstcontent/</guid>
-        <description>&lt;h3 id=&#34;测试文章&#34;&gt;测试文章
-&lt;/h3&gt;</description>
+        <guid>http://localhost:1313/p/stack/</guid>
+        <description>&lt;p&gt;我的博客搭建主要是参考了这个&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=c8cb10360ffece88b69adc5134cc4bc8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;手把手视频教程&lt;/a&gt;，但其只是开了个头，关于如何更细致地修改Stack主题还有很多东西可以探讨。下面以Stack的Demo和我的博客为例进行介绍。&lt;/p&gt;
+&lt;h2 id=&#34;如何确保hugo的命令能被执行&#34;&gt;如何确保hugo的命令能被执行？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;配置系统环境变量；&lt;/p&gt;
+&lt;p&gt;Hugo安装好后，应该有一个名为hugo.exe的可执行程序，其最大的作用就是解析命令。这一类程序要想在任何文件目录下得以执行，在windows中基本都是靠环境变量来实现，例如Git。因此如果我们想要在任何站点下，都能直接执行hugo的命令，就需要为该程序配置系统环境变量。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p1.png&#34;
+	width=&#34;606&#34;
+	height=&#34;189&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p1_hu18324862204588668980.png 480w, http://localhost:1313/p/stack/imgs/p1_hu16521876149326705980.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;hugo.exe&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;320&#34;
+		data-flex-basis=&#34;769px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p2.png&#34;
+	width=&#34;200&#34;
+	height=&#34;48&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p2_hu15964733128545321297.png 480w, http://localhost:1313/p/stack/imgs/p2_hu10084597956742767849.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;配置系统环境变量&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;416&#34;
+		data-flex-basis=&#34;1000px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制可执行程序；&lt;/p&gt;
+&lt;p&gt;直接将hugo.exe复制到其站点根目录下，也能保证该站点的hugo命令可以执行。例如我的站点名称是FirstSite，那么按照上图，我复制的路径就是G:/Hugo/FirstSite/hugo.exe。但是如果这样做，那么每个新的站点都需要复制一份，没有方法1来得方便。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用demo&#34;&gt;使用Demo
+&lt;/h2&gt;&lt;p&gt;此处的Demo指的是Stack主题的作者所提供的一些示例文章与页面，例如名为Markdown Syntax Guide的文章，Home、About页面等，这些东西在hugo中保存在一个名为content的文件夹内。&lt;/p&gt;
+&lt;p&gt;hugo加载网站内容时，站点的优先级高于主题，即：hugo会先加载站点根目录下content文件夹的文章，其次去加载主题根目录下的content。由于Stack主题的content文件夹保存在一个名为exampleSite的文件夹下，因此有以下两种方法使用其Demo(推荐方法1，之后添加新页面、文章都可以直接在站点下的content写)。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用exampleSite下的content替换掉站点根目录下的content；&lt;/li&gt;
+&lt;li&gt;将exampleSite下的content剪切到主题根目录下；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p3.png&#34;
+	width=&#34;611&#34;
+	height=&#34;172&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p3_hu3326970504034851102.png 480w, http://localhost:1313/p/stack/imgs/p3_hu14578974193105180860.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Stack主题的content位置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;355&#34;
+		data-flex-basis=&#34;852px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p4.png&#34;
+	width=&#34;1129&#34;
+	height=&#34;970&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p4_hu14141699426013520984.png 480w, http://localhost:1313/p/stack/imgs/p4_hu3475435274984698566.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Demo&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;116&#34;
+		data-flex-basis=&#34;279px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置文件&#34;&gt;配置文件
+&lt;/h2&gt;&lt;p&gt;与content同理，在exampleSite下可以找到一个名为hugo.yaml的配置文件，直接用其作为站点的配置文件即可。该配置文件的参数含义在Stack主题的官方网站以及上述视频教程中都介绍得比较详细，在此不再赘述。&lt;/p&gt;
+&lt;h2 id=&#34;布局&#34;&gt;布局
+&lt;/h2&gt;&lt;p&gt;通过浏览器的开发者模式可以发现，整个博客页面由三大部分组成，分别是left-sidebar、main、right-sidebar，位于页面的左侧、中间、右侧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p5.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p5_hu17427291760924973456.png 480w, http://localhost:1313/p/stack/imgs/p5_hu3914614053922765022.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;left-sidebar&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p6.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p6_hu9574776291437125619.png 480w, http://localhost:1313/p/stack/imgs/p6_hu15240147861849166144.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;main&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p7.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p7_hu6160409573029833366.png 480w, http://localhost:1313/p/stack/imgs/p7_hu5881341795701984191.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;right-sidebar&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改导航栏&#34;&gt;修改导航栏
+&lt;/h3&gt;&lt;p&gt;left-sidebar包含头像、个签、导航栏等多个分区，其中导航栏可切换到不同的页面，例如Home、About等。要删除其中任何一个，只需要在content/page目录下找到对应的页面md文件，删除掉其&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/content-management/front-matter/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FrontMatter&lt;/a&gt;中的menu字段。注意，这里的content路径取决于你使用Stack主题Demo的方式(后面都是同理)。即：如果你是采取的方法1，那么你只需要修改站点下的content即可，如果你采取的方法2，那么就修改主题下的content。同理，想要修改导航栏的图标、文字、页面内容也都是直接在上述路径下对应页面md文件中修改。下图采取方法1使用Stack主题的Demo，将导航栏中的About页面的title修改为简介，其它页面同理。由于我的博客默认语言使用中文，为了以后支持英文更方便，我是直接在index.zh-cn.md文件中修改，而不是在index.md文件中，后者是默认文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p8.png&#34;
+	width=&#34;418&#34;
+	height=&#34;285&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p8_hu12923383150541764540.png 480w, http://localhost:1313/p/stack/imgs/p8_hu5364303527854541777.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改导航栏的页面&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;146&#34;
+		data-flex-basis=&#34;352px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p9.png&#34;
+	width=&#34;155&#34;
+	height=&#34;189&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p9_hu1698885999043227601.png 480w, http://localhost:1313/p/stack/imgs/p9_hu15955235068932835895.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;82&#34;
+		data-flex-basis=&#34;196px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p10.png&#34;
+	width=&#34;147&#34;
+	height=&#34;191&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p10_hu3693556218893528340.png 480w, http://localhost:1313/p/stack/imgs/p10_hu17037473372882549729.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;76&#34;
+		data-flex-basis=&#34;184px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改分类页面上方的图片&#34;&gt;修改分类页面上方的图片
+&lt;/h3&gt;&lt;p&gt;注：此处的分类页面在原Demo的导航栏中名为Archives。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;修改提示文字；&lt;/p&gt;
+&lt;p&gt;在content/categories路径下，新建一个_index.md文件，在FrontMatter中添加一个title字段，该值就是所有分类图片上方的提示文字。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p11.png&#34;
+	width=&#34;382&#34;
+	height=&#34;259&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p11_hu6187442634381690926.png 480w, http://localhost:1313/p/stack/imgs/p11_hu3187332414884759168.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改图片的提示文字&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;353px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p12.png&#34;
+	width=&#34;1329&#34;
+	height=&#34;510&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p12_hu3877102170146762922.png 480w, http://localhost:1313/p/stack/imgs/p12_hu1973684454060167757.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;260&#34;
+		data-flex-basis=&#34;625px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p13.png&#34;
+	width=&#34;1245&#34;
+	height=&#34;468&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p13_hu6452626915817432362.png 480w, http://localhost:1313/p/stack/imgs/p13_hu3155820999636994789.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;266&#34;
+		data-flex-basis=&#34;638px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建分类；&lt;/p&gt;
+&lt;p&gt;同样的路径下，根据自己的文章分类关键字，创建同名文件夹。例如我的文章里有一个名为生活的分类，那么我就在content/categories路径下创建了一个名为生活的文件夹，在其下包含_index.md文件与想展示的背景图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p14.png&#34;
+	width=&#34;429&#34;
+	height=&#34;367&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p14_hu2613763692803713717.png 480w, http://localhost:1313/p/stack/imgs/p14_hu2256063625608040101.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新建分类&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;116&#34;
+		data-flex-basis=&#34;280px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p15.png&#34;
+	width=&#34;439&#34;
+	height=&#34;218&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p15_hu2660149284575688412.png 480w, http://localhost:1313/p/stack/imgs/p15_hu4735585402563998440.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;背景图效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;201&#34;
+		data-flex-basis=&#34;483px&#34;
+	
+&gt;  &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p16.png&#34;
+	width=&#34;1107&#34;
+	height=&#34;458&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p16_hu8351739636825677646.png 480w, http://localhost:1313/p/stack/imgs/p16_hu13247818036906369712.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;点击背景图后的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;241&#34;
+		data-flex-basis=&#34;580px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;修改文章中点击图片后的提示文字&#34;&gt;修改文章中点击图片后的提示文字
+&lt;/h3&gt;&lt;p&gt;Stack主题使用了一个名为photoswipe的js库，以此来更方便地查看图片。当我们点击文章中的图片后，会进入图片详情界面，原本被压缩显示的图片此时会以原像素显示，更加清晰，并且图片的四周会弹出一些按钮与提示文字，例如左右两侧的Previous (arrow left)与Next (arrow right)就是用于切换上一张与下一张图片的。&lt;/p&gt;
+&lt;p&gt;要想修改这些提示文字，需要在主题根目录下找到对应的html文件。以本人名为FirstSite的站点为例，该文件的路径是G:\Hugo\FirstSite\themes\hugo-theme-stack\layouts\partials\article\components\photoswipe.html。只要使用Stack主题，layouts\partials\article\components\photoswipe.html的部分就是固定的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;右上角：关闭、分享、全屏、缩放&lt;/p&gt;
+&lt;p&gt;在photoswipe.html中找到4个button，如下图所示，修改它们的title属性就可以修改它们在页面中的提示文字。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p17.png&#34;
+	width=&#34;765&#34;
+	height=&#34;165&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p17_hu16920273630805353886.png 480w, http://localhost:1313/p/stack/imgs/p17_hu16762819360373499001.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;463&#34;
+		data-flex-basis=&#34;1112px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p18.png&#34;
+	width=&#34;713&#34;
+	height=&#34;168&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p18_hu2039531733145981445.png 480w, http://localhost:1313/p/stack/imgs/p18_hu9175938973402554740.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;424&#34;
+		data-flex-basis=&#34;1018px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p19.png&#34;
+	width=&#34;1910&#34;
+	height=&#34;1074&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p19_hu1132991710749156369.png 480w, http://localhost:1313/p/stack/imgs/p19_hu238456950504283605.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p20.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1072&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p20_hu13712503214669649707.png 480w, http://localhost:1313/p/stack/imgs/p20_hu5803725369942977942.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;179&#34;
+		data-flex-basis=&#34;429px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右上角：点击share(分享)按钮后的提示框&lt;/p&gt;
+&lt;p&gt;Stack的原Demo中，点击share按钮后会弹出photoswipe的默认提示框。若要修改它们，需找到对应的ts文件。在本博客的例子中，这个路径是G:\Hugo\FirstSite\themes\hugo-theme-stack\assets\ts\gallery.ts。该文件中有一个类名为StackGallery的类，其中有一个名为open的方法，修改它即可，原理如图中所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p21.png&#34;
+	width=&#34;810&#34;
+	height=&#34;364&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p21_hu3502324107039485387.png 480w, http://localhost:1313/p/stack/imgs/p21_hu18020746701482150440.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;534px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p22.png&#34;
+	width=&#34;847&#34;
+	height=&#34;458&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p22_hu13095156497317205365.png 480w, http://localhost:1313/p/stack/imgs/p22_hu17559808845981105963.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;443px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p23.png&#34;
+	width=&#34;1913&#34;
+	height=&#34;1075&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p23_hu5723376536869093708.png 480w, http://localhost:1313/p/stack/imgs/p23_hu1017788015181307780.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;427px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p24.png&#34;
+	width=&#34;1913&#34;
+	height=&#34;1071&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p24_hu12944838831679145405.png 480w, http://localhost:1313/p/stack/imgs/p24_hu4327103661871014179.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;178&#34;
+		data-flex-basis=&#34;428px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左右两侧：上一张、下一张&lt;/p&gt;
+&lt;p&gt;同理，也是在photoswipe.html中找到2个button，修改其title属性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p25.png&#34;
+	width=&#34;799&#34;
+	height=&#34;122&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p25_hu8128225751379399161.png 480w, http://localhost:1313/p/stack/imgs/p25_hu8227436907605924575.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;654&#34;
+		data-flex-basis=&#34;1571px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p26.png&#34;
+	width=&#34;667&#34;
+	height=&#34;121&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p26_hu3081295869304471870.png 480w, http://localhost:1313/p/stack/imgs/p26_hu184156049562984442.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;551&#34;
+		data-flex-basis=&#34;1322px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p27.png&#34;
+	width=&#34;1919&#34;
+	height=&#34;1076&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p27_hu10933813794403398608.png 480w, http://localhost:1313/p/stack/imgs/p27_hu18217608325518531595.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;178&#34;
+		data-flex-basis=&#34;428px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p28.png&#34;
+	width=&#34;1913&#34;
+	height=&#34;1073&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p28_hu10857843772899541242.png 480w, http://localhost:1313/p/stack/imgs/p28_hu9314043849186188733.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;178&#34;
+		data-flex-basis=&#34;427px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;底部：图片名称的位置&lt;/p&gt;
+&lt;p&gt;在photoswipe.html中，图片名称的位置是由一个类名为pswp__caption__center的div块决定的。由于Stack的原Demo中使用了photoswipe的默认样式，使得该div块的text-align属性值为left，因此图片名称并未居中显示。要想使其居中，只需要利用css的内联样式即可，即将刚才提到的text-align值修改为center。原理如下：photoswipe是通过cdn分发的，导致其css文件是一个外部样式引用，而css中内联样式的优先级高于外部样式，因此上述所设置的text-align:center可以覆盖掉默认的text-align:left。这一点在修改后的效果图中可以验证，pswp__caption__center块的text-align:left这一行被一条横线抹掉了，取而代之的是element.style的text-align:center。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p29.png&#34;
+	width=&#34;428&#34;
+	height=&#34;79&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p29_hu8116784526017061192.png 480w, http://localhost:1313/p/stack/imgs/p29_hu3689961583020975891.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;541&#34;
+		data-flex-basis=&#34;1300px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/stack/imgs/p30.png&#34;
+	width=&#34;687&#34;
+	height=&#34;76&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p30_hu16534612134321535700.png 480w, http://localhost:1313/p/stack/imgs/p30_hu7368278163730819711.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;903&#34;
+		data-flex-basis=&#34;2169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p31.png&#34;
+	width=&#34;1914&#34;
+	height=&#34;956&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p31_hu3891488023665777126.png 480w, http://localhost:1313/p/stack/imgs/p31_hu11756524384934244316.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改前的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;480px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/stack/imgs/p32.png&#34;
+	width=&#34;1912&#34;
+	height=&#34;954&#34;
+	srcset=&#34;http://localhost:1313/p/stack/imgs/p32_hu8245810520922936360.png 480w, http://localhost:1313/p/stack/imgs/p32_hu4159853261748857691.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;修改后的效果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;481px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>一些饭桌上的习惯</title>
+        <link>http://localhost:1313/p/social_etiquette/</link>
+        <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/social_etiquette/</guid>
+        <description>&lt;img src="http://localhost:1313/p/social_etiquette/p1.jpg" alt="Featured image of post 一些饭桌上的习惯" /&gt;&lt;p&gt;今天去吃了酒席，用我们家乡话来讲，叫做“走人夫”。这是一件高兴的事，毕竟是去沾沾别人的喜庆，讨个好彩头。途中也发生了一些趣事，对成年人来说，大家习以为常。那么，故事就从一个饭桌上的一个叔叔问起我的近况开始吧。&lt;/p&gt;
+&lt;h2 id=&#34;学校&#34;&gt;学校
+&lt;/h2&gt;&lt;p&gt;我跟他素不相识，算是主人家的不同客人坐到了同一桌。按照一个常年混迹于社会上的中年人而言，跟周围的人破破冰，拉拢家常算是喜闻乐见的事。我自然逃不过，于是看着我的外貌，他就顺手问起了我是否在读书的问题，接着就是一句熟悉的话，“哪个学校呀”？&lt;/p&gt;
+&lt;p&gt;这真是一个要命的问题，尤其是对于我这样一个二战考研后，等待结果的人。我不可能只回答他我曾经在大学城读书，现在已经毕业了，毕竟人家问的这么具体，况且那是几年前我的回答，现在应该有些不一样了。但我也不可能信誓旦旦地告诉他我即将考研上岸，因为那不是事实，如果我这样做了，我就是在给自己找面子。所以，我选择了不说话，转向了看台，恰好，此时看台上，主人家正在讲话，这替我缓解了尴尬，但显得我没有礼貌。于是，我的老父亲替我打了圆场，说出了我不愿意说出的答案。&lt;/p&gt;
+&lt;p&gt;其实这根本不算事，小到我自己都想笑笑。我知道它意味着什么，也知道我说不出口的原因的根在哪儿。如果没有这种对自己学校的不自信，我也不会有那么强烈的考研意愿，曾经也不用那么痛苦，在985与普通学校里面纠结，纠结于自己的不甘心但又知道了自己能力的无奈。它至少是我这几年一切的起点，但我想它不能够是全部，否则，理想与现实之间的桥梁就很难立稳。&lt;/p&gt;
+&lt;p&gt;我想了想，如果是现在的我，我或许会问，“你在哪个地方读书”？这样可能会减少跟我有类似经历与性格的人的尴尬，毕竟他可以只谈论那个地方的美食、人文、风俗等容易引起共识的事。当然，如果他愿意，他自己也可以大大方方地说出学校的名字，无论是处于炫耀、自信、满足、平淡，亦可。&lt;/p&gt;
+&lt;h2 id=&#34;父亲的期待&#34;&gt;父亲的期待
+&lt;/h2&gt;&lt;p&gt;吃得差不多后，是主人家跟客人挨桌喝酒摆家常的时段。我这桌靠近看台，而主人家是从门口开始的，就等了老一会儿。主人家的儿子是一个军人，还是特种兵。这是一件几乎让所有人都骄傲的事情，我也不例外，但我不会表现出来，因为喜欢跟吃饭是两码事，况且我走上了另一条路。当他谈论到儿子的家属待遇时，就连刚刚满100天的儿子都会享受每月600元的补贴时，我确实涌出了羡慕的情绪。&lt;/p&gt;
+&lt;p&gt;“看哈当兵的待遇嘛”，老父亲转向我。&lt;/p&gt;
+&lt;p&gt;“哼”，伴随着一个礼貌的闭嘴式微笑，我作出了回答。&lt;/p&gt;
+&lt;p&gt;“哼啊，哼”。&lt;/p&gt;
+&lt;p&gt;显然，他认为我的态度很轻蔑。的确，我也这么认为，因为我看到了那个叛逆的影子，就是他，让我曾经拒绝了当兵这条路。不过那时，他应该只是叛逆，不想听从父母的话。现在，我能够说出来一些理由，以一个暂时失败者的口吻。我确实找到了更喜欢的事，更能让我专注，更有动力。它跟我走上的路产生了部分重合，当我在这条路上未听到喝彩时，我会找它来倾诉。此时此刻，我就是这么做的。&lt;/p&gt;
+&lt;h2 id=&#34;酒&#34;&gt;酒
+&lt;/h2&gt;&lt;p&gt;这个老生常谈的话题，这个我非常习惯，但在亲戚面前如此陌生的问题。如果说我的父亲是因为身体原因不能喝酒的话，现在的我纯粹是因为不想喝。为什么是现在，因为曾经我也用过身体原因这个理由，皮肤病、痛风，我经历过，也用过它们当作挡箭牌。我感受过在毕业酒局上喝一整瓶2L可乐的滋味，对此，我认为喝酒的感觉会更好，无论是心理上还是生理上。&lt;/p&gt;
+&lt;p&gt;不想喝的原因是什么？最根本的还是认为不值得。“这些只会在过年饭桌上见面的大人们，和他们喝酒，有什么价值”？这是我内心最深处的话。那同龄人呢？那些有潜力，将来可能会为我提供诺大社会关系的人呢？他们值得喝吗？&lt;/p&gt;
+&lt;p&gt;这也是个很难有标准答案的问题。曾经一个跟我同龄，但凭借自己的努力、天赋、时运，事业有成的人在饭桌上跟我讲，“会喝酒没什么用，我见过一些牛逼的作家们，他们都不喝酒，都有自己的个性”。现在，他即将结婚，迈入新的人生阶段，我想看看他那天会不会喝酒，仅仅想看看而已。也是同一个饭桌上，另一个跟我一起考研的朋友，谈起了他开火锅店的父母的告诫与经验，他认为会喝酒、会社交，是有用的，理由是能帮助处理很多人际关系。&lt;/p&gt;
+&lt;p&gt;喝，亦或不喝。你喝了酒，可能你会赢得他人的尊重，但有点社会意识强加于人的感觉，容易引起我们这代“极具个性”的年轻人反感。这没有什么不对，因为人的本质属性还是社会性。社会巨人会不时在背后给人灌输思想，你或许能极力阻止自己不受其干扰，但很难保证样本众多的情况下，大概率事件不发生；你不喝酒，的确会受到他人的“鄙夷”，长辈们说你该学到了，同辈们说你不谙世事，甚至一个更年轻的小伙子都可以在心里“看不起”你，但那也没什么，谈笑间就过去了，只不过是个无限循环。&lt;/p&gt;
+&lt;p&gt;对于该问题，我的结论是:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;current_situation&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nx&#34;&gt;cause&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//事业
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;mood&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;//心情
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;polite&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//礼貌
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deal_drink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;current_situation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//默认不喝酒
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;current_situation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cause&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;current_situation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mood&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;current_situation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;polite&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nx&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nx&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;题外话&#34;&gt;题外话
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/social_etiquette/p1.jpg&#34;
+	width=&#34;4000&#34;
+	height=&#34;3000&#34;
+	srcset=&#34;http://localhost:1313/p/social_etiquette/p1_hu1032935501930295260.jpg 480w, http://localhost:1313/p/social_etiquette/p1_hu12370461349665808654.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;此刻窗外的太阳&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>考研结束后的日子</title>
+        <link>http://localhost:1313/p/informal-essay/</link>
+        <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/informal-essay/</guid>
+        <description>&lt;img src="http://localhost:1313/p/informal-essay/imgs/p1.jpg" alt="Featured image of post 考研结束后的日子" /&gt;&lt;h2 id=&#34;逃避现实&#34;&gt;逃避现实
+&lt;/h2&gt;&lt;p&gt;不知为何，当我开始落实写点儿东西时，之前所有想说的话都骤然停止了下来。脑子里的修辞手法此刻也不管用了，不知道如何去描述当下。它们好似害羞媳妇儿见了公婆，一语不发了。但我还是劈里啪啦地敲着字，只是想听听键盘清脆的回弹声，这会让我注意力集中一点，更有方向感一点。&lt;/p&gt;
+&lt;p&gt;是的，自打考研结束后，我的生活丢失了方向，逐渐变成了一团乱麻。太多我想做的事和我的“懒散”交织在一起，让我无法前进。做网站、写博客、旅游、玩游戏、阅读英语书籍、准备复试……数不过来，最后我选择了一个最方便的电子游戏来逃避现实。&lt;/p&gt;
+&lt;p&gt;备考的时候，我特喜欢解决问题时的满足感；现在，我不自觉地“偏爱”逃避问题的习惯。每次博客写不出来、网站调整时遇到难题，我都会逃到游戏世界里去。这个过程循环了很久，大约有一个多星期，之后我才意识到，游戏里我能感受到“良质”的存在。耐心地分析问题、寻求技术解决、进入一种忘乎所以的心流境界，就是我所感受到的最直观、最粗浅的“良质”，曾经学编程时就是这种感觉。&lt;/p&gt;
+&lt;h2 id=&#34;懒散&#34;&gt;“懒散”
+&lt;/h2&gt;&lt;p&gt;备考时我看过一篇文章，里面介绍了idleness与indulgence的区别，也就是懒散与放纵的区别。我想我现在的状态介于两者之间，更偏向前者，类似于“水瓶偏双鱼”的混血星座。这种“懒散”源于长期憋着一股劲儿做一件事，期待着那件事成，以此来证明自己的价值。但结果并不如意，或者至少充满了不确定性。因此，近期里，我找不到自己的价值，迫切地希望寻求一个媒介来表达自己。可我越这样想，离目的地就越远。在街道上散步时的闲言碎语，此刻就像一团无法凝固的气体，在那里东窜西眺。我该说些什么呢？我该做些什么呢？&lt;/p&gt;
+&lt;p&gt;丢失目标后，就是这种感觉。这跟去年不同，在去年的数学考完后，我就知道了结果，知道我必然会走上二战的道路。可今年，我也不是很确定了。抑或是运气好，能够进复试，但今年如此简单的数学，以及缩招的名额，我的那点儿分数，就算运气再好，也不可能产生质的变化，考上理想目标是不现实的；又或者是进不了复试，去参加调剂，但我会甘心吗？考之前我这样想过，考完后就陷入了纠结，因为总想着明年再换个简单一点儿的目标，至少是自己想去的；最后就是没进复试，调剂也不行，又面临着找工作与再考一次的抉择了。&lt;/p&gt;
+&lt;p&gt;难怪最近我那么喜欢&amp;laquo;Bleeding Love&amp;raquo;这歌，我还以为曾经失恋时的感觉回来了，结果只是迷茫掩盖了一切，让情绪down到了谷底。&lt;/p&gt;
+&lt;h2 id=&#34;简单的东西&#34;&gt;简单的东西
+&lt;/h2&gt;&lt;p&gt;我不太喜欢刻意地去写东西，它源于我做事喜欢充分地准备。就像这次考一个所谓摩托车驾证，交管12123上会不定时放出两个一天考完4个科目的名额。也就是说这个驾证在官方的侧面认证中，是比较简单的。但我花了2个星期，相当慢。前前后后去种子公司练车练了一个多星期。实操考试前连续两天在考场合场，反反复复排着队，从早上太阳出来合到太阳落山，就像机器一样周而复始地重复着那些动作，唯一不同的是，我是人，我的情绪会时不时疑惑这一切的意义。这让我想起了原来考C语言计算机二级证书的时候。一个很简单的东西，为了万无一失，硬生生在模拟系统上连续刷题两个月，刷到肌肉记忆。&lt;/p&gt;
+&lt;p&gt;为什么我老是喜欢在简单的东西上花费这么多的时间呢？做完这些事似乎并没有给我带来太多实质意义上的证明。比如，一张计算机二级证书，最大的作用，就是帮我补了一门选修课的2个学分，当说出我有计算机证书，还是二级的时候，办事处老师的表情有一丝惊讶，但转瞬即过。我想她大概是认为很少有人会花时间做这个回报不高的事。如果我拿出考二级证书的那股子劲儿，去参加几个编程比赛，现在的我还会在这里纠结自己的复试吗？或许不会。我总是觉得自己是一个好好学生，学习着课本上的知识，所能得到最好的结果就是绩点比没有学的同学高一点，但还是拿不到奖学金，没有用这些知识做出几个实际的项目，不太被别人看得见。&lt;/p&gt;
+&lt;p&gt;然，看着那一篇篇仔细分析、修改过的大作业文档，我心里有股声音又在说，“我在好好学知识”。曾经我最喜欢的一个教学环节就是答辩，因为那样我可以完整地把我项目中所有用到的技术、设计都讲出来，就像现在一样，那仿佛是讲出我的心声，让别人认可我的最好方式。&lt;/p&gt;
+&lt;h2 id=&#34;图片&#34;&gt;图片
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/informal-essay/imgs/p1.jpg&#34;
+	width=&#34;3000&#34;
+	height=&#34;4000&#34;
+	srcset=&#34;http://localhost:1313/p/informal-essay/imgs/p1_hu8214908119175724921.jpg 480w, http://localhost:1313/p/informal-essay/imgs/p1_hu9520783238482833782.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;太阳快落山时的考场&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;75&#34;
+		data-flex-basis=&#34;180px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/informal-essay/imgs/p2.jpg&#34;
+	width=&#34;1279&#34;
+	height=&#34;1706&#34;
+	srcset=&#34;http://localhost:1313/p/informal-essay/imgs/p2_hu15163713926908730858.jpg 480w, http://localhost:1313/p/informal-essay/imgs/p2_hu10242702862040087260.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新旧驾证&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;74&#34;
+		data-flex-basis=&#34;179px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>新的开始</title>
+        <link>http://localhost:1313/p/my-first-blog/</link>
+        <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/my-first-blog/</guid>
+        <description>&lt;img src="http://localhost:1313/p/my-first-blog/p3.jpg" alt="Featured image of post 新的开始" /&gt;&lt;h2 id=&#34;结束&#34;&gt;结束
+&lt;/h2&gt;&lt;p&gt;伴随着考试结束的铃声响起，2024年12月22日，我的二战之旅走完半程了。剩下的半程我也不知道还能不能走，去年就是在这止步的。又努力了大半年，本以为会有比较大的希望，最后又哉在数学上，几道很简单的线代题，考试时我却不愿意多看几眼。15-20分，一个可以给我莫大勇气与确定的分数，再一次离开了我。&lt;/p&gt;
+&lt;p&gt;我推后了几天将这个消息告诉我的父母。再一次我看见了母亲的神情，她说，“至少你比去年有进步”，那个神情就同以前跟亲戚吃饭时一样，问起我在哪里读大学，他们只能礼貌地说在大学城，一个专科学校，一个不错的专科学校。这个学校的名字长得他们都记不住，每次都记不住。是啊，换我，我也记不住，我能记住的只有那几所名气大的大学。这也是我要考两次985的部分原因。&lt;/p&gt;
+&lt;p&gt;现在，我飘离在梦的边缘，一个做了3、4年的梦，快结束了。&lt;/p&gt;
+&lt;h2 id=&#34;折腾&#34;&gt;折腾
+&lt;/h2&gt;&lt;p&gt;经历了前前后后一系列折腾，包括找时间、学技术、规划等等，最后还是决定使用最简单的生成器先做一个博客出来，看看自己是否喜欢写东西。别到时候前端界面劈里啪啦一顿好写，精美无比，最后发现自己不喜欢写这种没人看的自我陶醉文章，那可真就叫做瞎折腾了。&lt;/p&gt;
+&lt;p&gt;什么？你会说自己手写的这个网站不能算作自己的个人项目吗？怎么能叫瞎搞呢？
+以前我也是这么想的，所以信誓旦旦地要在考研那么忙的时候，抽时间来学习JavaScript。最后，望着那厚厚的一沓书，看着上面密密麻麻的笔记，心里想说又不知道说什么，学了吧，学了，但没怎么用过，不精通，没啥项目可以证明，没学吧，不甘心，就这么放在那儿，只有我自己知道。
+更何况，在AI时代还没有到来之前，制作一般公式化的网站就已经不再需要从零开始了，套模板或者更简单粗暴，直接用网站来生成网站，网站的技术含量大大降低。从找工作的角度来讲，一个个人博客只能比没有东西要强。&lt;/p&gt;
+&lt;p&gt;不过这些只是我现实的一方面表达，对于目前看不到成果的一些呻吟罢了。学这些东西的的确确帮助过我，至少让我知道了编程语言其实大差不差，它只是一个工具。&lt;/p&gt;
+&lt;h2 id=&#34;开始&#34;&gt;开始
+&lt;/h2&gt;&lt;p&gt;今天正好是我摩托车驾证理论考试的日子。刚到车管所的时候，就看见了原来学小车时的驾校，也算是回忆起了那个时候的自己，18岁，充满青春活力。&lt;/p&gt;
+&lt;p&gt;等到9点，门口候考的人有序走进了考场。没想到现在考个驾证这么严格，大家被要求穿着统一的考试服(类似于家里厨房的围裙)，防止作弊。考场内开着暖气，我还是习惯不了，咳嗽又犯了，回程中在公交车上咳嗽个不停。这还是我第一次乘坐528，从车管所直达步步高的二角烧烤对面，这2块钱真是赚了。&lt;/p&gt;
+&lt;p&gt;哦，对了，早上去车管所的时候，托儿车司机带着我免费去高速上兜了一圈，从二桥上道，南津街下道，下去就是铜合路，真是开了眼界。&lt;/p&gt;
+&lt;h2 id=&#34;图片&#34;&gt;图片
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/my-first-blog/p1.jpg&#34;
+	width=&#34;4000&#34;
+	height=&#34;3000&#34;
+	srcset=&#34;http://localhost:1313/p/my-first-blog/p1_hu13669680424075988630.jpg 480w, http://localhost:1313/p/my-first-blog/p1_hu11620218258852432685.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;考研当天&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/my-first-blog/p2.jpg&#34;
+	width=&#34;1706&#34;
+	height=&#34;1279&#34;
+	srcset=&#34;http://localhost:1313/p/my-first-blog/p2_hu3263277997535623732.jpg 480w, http://localhost:1313/p/my-first-blog/p2_hu6995220871703190502.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;当初学js时做的笔记&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/my-first-blog/p3.jpg&#34;
+	width=&#34;3000&#34;
+	height=&#34;4000&#34;
+	srcset=&#34;http://localhost:1313/p/my-first-blog/p3_hu6543862405206698624.jpg 480w, http://localhost:1313/p/my-first-blog/p3_hu9299241573481677608.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;考完科目一/三出来的路口&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;75&#34;
+		data-flex-basis=&#34;180px&#34;
+	
+&gt; &lt;img src=&#34;http://localhost:1313/p/my-first-blog/p4.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;http://localhost:1313/p/my-first-blog/p4_hu11472379368798308453.jpg 480w, http://localhost:1313/p/my-first-blog/p4_hu15026750765260745733.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;车管所门口&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>分类</title>
@@ -23,427 +724,6 @@
         
         <guid>http://localhost:1313/archives/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>Chinese Test</title>
-        <link>http://localhost:1313/p/test-chinese/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/test-chinese/</guid>
-        <description>&lt;img src="http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试
-&lt;/h2&gt;&lt;p&gt;而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p&gt;
-&lt;p&gt;奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p&gt;
-&lt;h2 id=&#34;引用&#34;&gt;引用
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;思念是最暖的忧伤像一双翅膀&lt;br&gt;
-让我停不了飞不远在过往游荡&lt;br&gt;
-不告而别的你 就算为了我着想&lt;br&gt;
-这么沉痛的呵护 我怎么能翱翔&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=3aypp_YlBzI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;最暖的憂傷 - 田馥甄&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;图片&#34;&gt;图片
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu13768363498926278726.jpg 480w, http://localhost:1313/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu13380208884366868750.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Florian Klauer on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;  &lt;img src=&#34;http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;667&#34;
-	srcset=&#34;http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu1712544344331247820.jpg 480w, http://localhost:1313/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu12475395149584884402.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Luca Bravo on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;149&#34;
-		data-flex-basis=&#34;359px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;750&#34;
-	srcset=&#34;http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu8363585391189779282.jpg 480w, http://localhost:1313/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu15102473124145023839.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Helena Hertz on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;133&#34;
-		data-flex-basis=&#34;320px&#34;
-	
-&gt;  &lt;img src=&#34;http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu15886963791847885497.jpg 480w, http://localhost:1313/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu11726476772237334826.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Hudai Gayiran on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Florian Klauer on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Luca Bravo on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span&gt;) 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Helena Hertz on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Hudai Gayiran on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;相册语法来自 &lt;a class=&#34;link&#34; href=&#34;https://typlog.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Typlog&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Markdown Syntax Guide</title>
-        <link>http://localhost:1313/p/markdown-syntax-guide/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/markdown-syntax-guide/</guid>
-        <description>&lt;img src="http://localhost:1313/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h2 id=&#34;headings&#34;&gt;Headings
-&lt;/h2&gt;&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
-&lt;h1 id=&#34;h1&#34;&gt;H1
-&lt;/h1&gt;&lt;h2 id=&#34;h2&#34;&gt;H2
-&lt;/h2&gt;&lt;h3 id=&#34;h3&#34;&gt;H3
-&lt;/h3&gt;&lt;h4 id=&#34;h4&#34;&gt;H4
-&lt;/h4&gt;&lt;h5 id=&#34;h5&#34;&gt;H5
-&lt;/h5&gt;&lt;h6 id=&#34;h6&#34;&gt;H6
-&lt;/h6&gt;&lt;h2 id=&#34;paragraph&#34;&gt;Paragraph
-&lt;/h2&gt;&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
-&lt;p&gt;Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
-&lt;h2 id=&#34;blockquotes&#34;&gt;Blockquotes
-&lt;/h2&gt;&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
-&lt;h4 id=&#34;blockquote-without-attribution&#34;&gt;Blockquote without attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;blockquote-with-attribution&#34;&gt;Blockquote with attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br&gt;
-— &lt;cite&gt;Rob Pike&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;tables&#34;&gt;Tables
-&lt;/h2&gt;&lt;p&gt;Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Name&lt;/th&gt;
-          &lt;th&gt;Age&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Bob&lt;/td&gt;
-          &lt;td&gt;27&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Alice&lt;/td&gt;
-          &lt;td&gt;23&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;inline-markdown-within-tables&#34;&gt;Inline Markdown within tables
-&lt;/h4&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Italics&lt;/th&gt;
-          &lt;th&gt;Bold&lt;/th&gt;
-          &lt;th&gt;Code&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&lt;/th&gt;
-          &lt;th&gt;B&lt;/th&gt;
-          &lt;th&gt;C&lt;/th&gt;
-          &lt;th&gt;D&lt;/th&gt;
-          &lt;th&gt;E&lt;/th&gt;
-          &lt;th&gt;F&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
-          &lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
-          &lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
-          &lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
-          &lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
-          &lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;code-blocks&#34;&gt;Code Blocks
-&lt;/h2&gt;&lt;h4 id=&#34;code-block-with-backticks&#34;&gt;Code block with backticks
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;code-block-indented-with-four-spaces&#34;&gt;Code block indented with four spaces
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-  &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;code-block-with-hugos-internal-highlight-shortcode&#34;&gt;Code block with Hugo&amp;rsquo;s internal highlight shortcode
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h4 id=&#34;diff-code-block&#34;&gt;Diff code block
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[dependencies.bevy]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;- features = [&amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gi&#34;&gt;+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;list-types&#34;&gt;List Types
-&lt;/h2&gt;&lt;h4 id=&#34;ordered-list&#34;&gt;Ordered List
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;First item&lt;/li&gt;
-&lt;li&gt;Second item&lt;/li&gt;
-&lt;li&gt;Third item&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;unordered-list&#34;&gt;Unordered List
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;List item&lt;/li&gt;
-&lt;li&gt;Another item&lt;/li&gt;
-&lt;li&gt;And another item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;nested-list&#34;&gt;Nested list
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fruit
-&lt;ul&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dairy
-&lt;ul&gt;
-&lt;li&gt;Milk&lt;/li&gt;
-&lt;li&gt;Cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;other-elements--abbr-sub-sup-kbd-mark&#34;&gt;Other Elements — abbr, sub, sup, kbd, mark
-&lt;/h2&gt;&lt;p&gt;&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Press &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; to end the session.&lt;/p&gt;
-&lt;p&gt;Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p&gt;
-&lt;h2 id=&#34;hyperlinked-image&#34;&gt;Hyperlinked image
-&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Google&#34;
-	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=PAAkCSZUG1c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;talk&lt;/a&gt; during Gopherfest, November 18, 2015.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Placeholder Text</title>
-        <link>http://localhost:1313/p/placeholder-text/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/placeholder-text/</guid>
-        <description>&lt;img src="http://localhost:1313/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
-&lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
-&lt;li&gt;Duce pollice&lt;/li&gt;
-&lt;li&gt;Eris modo&lt;/li&gt;
-&lt;li&gt;Spargitque ferrea quos palude&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Comas hunc haec pietate fetum procerum dixit&lt;/li&gt;
-&lt;li&gt;Post torum vates letum Tiresia&lt;/li&gt;
-&lt;li&gt;Flumen querellas&lt;/li&gt;
-&lt;li&gt;Arcanaque montibus omnes&lt;/li&gt;
-&lt;li&gt;Quidem et&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;vagus-elidunt&#34;&gt;Vagus elidunt
-&lt;/h1&gt;&lt;p&gt;&lt;svg class=&#34;canon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; overflow=&#34;visible&#34; viewBox=&#34;0 0 496 373&#34; height=&#34;373&#34; width=&#34;496&#34;&gt;&lt;g fill=&#34;none&#34;&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#ED1C24&#34; stroke-width=&#34;.75&#34; d=&#34;M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.479.375h495v372h-495zM247.979.875v372&#34;&gt;&lt;/path&gt;&lt;ellipse cx=&#34;498.729&#34; cy=&#34;177.625&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;ellipse cx=&#34;247.229&#34; cy=&#34;377.375&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The Van de Graaf Canon&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mane-refeci-capiebant-unda-mulcebat&#34;&gt;Mane refeci capiebant unda mulcebat
-&lt;/h2&gt;&lt;p&gt;Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong&gt;Faces illo pepulere&lt;/strong&gt; tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p&gt;
-&lt;p&gt;Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p&gt;
-&lt;p&gt;Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong&gt;mitis temploque&lt;/strong&gt; vocatus, inque alis, &lt;em&gt;oculos nomen&lt;/em&gt; non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong&gt;parte&lt;/strong&gt;.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Math Typesetting</title>
-        <link>http://localhost:1313/p/math-typesetting/</link>
-        <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
-        <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
-&lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Create a partial under &lt;code&gt;/layouts/partials/math.html&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Within this partial reference the &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/autorender.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Auto-render Extension&lt;/a&gt; or host these scripts locally.&lt;/li&gt;
-&lt;li&gt;Include the partial in your templates like so:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; or .Params.math .Site.Params.math &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; partial &lt;span class=&#34;s2&#34;&gt;&amp;#34;math.html&amp;#34;&lt;/span&gt; . &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; end &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;To enable KaTeX globally set the parameter &lt;code&gt;math&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in a project&amp;rsquo;s configuration&lt;/li&gt;
-&lt;li&gt;To enable KaTeX on a per page basis include the parameter &lt;code&gt;math: true&lt;/code&gt; in content files&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Use the online reference of &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/supported.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Supported TeX Functions&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;examples&#34;&gt;Examples
-&lt;/h3&gt;&lt;p&gt;Inline math: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$&lt;/p&gt;
-$$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
-$$</description>
-        </item>
-        <item>
-        <title>Emoji Support</title>
-        <link>http://localhost:1313/p/emoji-support/</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/emoji-support/</guid>
-        <description>&lt;img src="http://localhost:1313/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To enable emoji globally, set &lt;code&gt;enableEmoji&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in your site&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/getting-started/configuration/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;configuration&lt;/a&gt; and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt; &lt;code&gt;:see_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙉&lt;/span&gt; &lt;code&gt;:hear_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙊&lt;/span&gt; &lt;code&gt;:speak_no_evil:&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;http://www.emoji-cheat-sheet.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Emoji cheat sheet&lt;/a&gt; is a useful reference for emoji shorthand codes.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.emoji {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
         </item>
         <item>
         <title>查找</title>
@@ -461,7 +741,7 @@ $$</description>
         <guid>http://localhost:1313/%E7%AE%80%E4%BB%8B/</guid>
         <description>&lt;h2 id=&#34;为什么要搭这个博客&#34;&gt;为什么要搭这个博客?
 &lt;/h2&gt;&lt;h3 id=&#34;圆梦&#34;&gt;圆梦
-&lt;/h3&gt;&lt;p&gt;很早之前，学网页制作的时候就想要自己做一个网站，但后来由于一些事情耽搁了。折腾了大半天，还是决定从最简单的生成器开始弄，先做出个东西再说，哪怕不是我自己“完全制作”的。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;很早之前，学网页制作的时候就想要自己做一个网站，但后来由于考研耽搁了。折腾了大半天，还是决定从最简单的生成器开始弄，先做出个东西再说，哪怕不是我自己“完全制作”的。&lt;/p&gt;
 &lt;h3 id=&#34;换个清净的地方记录生活&#34;&gt;换个“清净”的地方记录生活
 &lt;/h3&gt;&lt;p&gt;我自己的朋友圈很长时间没更新过了，很大部分原因是之前在考研，没有心思。随着独处的时间越来越长，我发现朋友圈里不适合发一些“长篇大论”，而恰巧我又很想“说话”，于是机缘巧合下这种形式与我不谋而合。&lt;/p&gt;
 &lt;hr&gt;
@@ -469,7 +749,7 @@ $$</description>
 &lt;/h2&gt;&lt;h3 id=&#34;来源&#34;&gt;来源
 &lt;/h3&gt;&lt;p&gt;我有两个哥哥，它们的qq名都是一个字，一个生僻字。小时候我觉得它们很神秘，后来看到了一些使用中国汉字的炫酷的设计，我就迷上了这种简约神秘的“生僻字表达”。&lt;/p&gt;
 &lt;h3 id=&#34;含义&#34;&gt;含义
-&lt;/h3&gt;&lt;p&gt;这个字念qing，意思同晴天的晴。当然，这也只是我为了酷而临时去查的含义，关于这个字本身，我并不清楚太多官方的信息。很多不认识它的朋友，都会把它读作日与生两个字，这恰巧也是我的名所包含的两个字。再加上它寓意晴天，我觉得是一个积极的象征，便一直使用这个字。它代表着“我”追求阳光的那重人格，或许，随着不断地使用它，我会获得一些新的关于它的认识。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;这个字念qing，意思同晴天的晴。当然，这也只是我为了酷而临时去查的含义，关于这个字本身，我并不清楚太多官方的信息。很多不认识它的朋友，都会把它读作日与生两个字，这恰巧也是我的名所包含的两个字。再加上它寓意晴天，我觉得是一个积极的象征，便一直使用这个字。它代表着“我”追求阳光的那部分，或许，随着不断地使用它，我会获得一些新的关于它的认识。&lt;/p&gt;
 </description>
         </item>
         <item>
